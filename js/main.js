@@ -24,6 +24,8 @@ function loadMovieData(title=null) {
         pagination.classList.remove("d-none");
     }
 
+    console.log(moviesApi);
+
     fetch(moviesApi)
     .then((res) => res.json())
     .then((movies) => {
@@ -83,6 +85,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         let form = e.target;
         title = form.querySelector("#title").value;
         console.log(title);
+        page = 1;
         loadMovieData(title);
     });
     clear.addEventListener("click", (e) => {
